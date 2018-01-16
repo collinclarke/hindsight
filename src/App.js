@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import logo from './icon.svg';
 import './App.css';
-import Dropzone from 'react-dropzone';
-
-
-
-function onDrop(acceptedFiles, rejectedFiles) {
-
-}
+import Upload from './Upload';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -17,9 +12,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Hindsight</h1>
         </header>
-        <p className="App-intro">
-          
-        </p>
+        <div className="App-intro">
+          <Upload />
+        </div>
+
       </div>
     );
   }
