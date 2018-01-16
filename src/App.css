@@ -24,7 +24,9 @@
 }
 
 .App-intro {
+  height: 100%;
   font-size: large;
+  background: yellow;
 }
 
 @keyframes App-logo-spin {
