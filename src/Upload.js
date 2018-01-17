@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+import './Upload.css';
 
 class Upload extends Component {
 
-  constructor() {
-    super();
-    this.state = {
+  static defaultState() {
+    return {
       name: null,
       size: null,
       type: null,
       file: null,
       isUploading: false,
-      location: null,
       error: null,
+      source: null
     }
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = Upload.defaultState();
     this.storageRef = firebase.storage().ref();
   }
 
@@ -22,35 +27,27 @@ class Upload extends Component {
     const file = files[0];
     if (file) {
       const { name, size, type } = file;
-      this.setState({ name, size, type, file });
+      const source = window.URL.createObjectURL(file);
+      this.setState({ name, size, type, file, source });
     }
-    fetch("https://freegeoip.net/json/")
-    .then( res => res.json() )
-    .then(
-      (result) => {
-        this.setState({
-          location: result
-        }, () => console.log(this.state));
-      },
-      (error) => {
-        this.setState({
-          error
-        });
-      }
-    )
   }
 
   completeUpload = () => {
     this.setState({ isUploading: false });
+    this.clearForm();
+  }
+
+  clearForm = () => {
+    this.setState(Upload.defaultState());
   }
 
   onSubmit = e => {
     e.preventDefault();
     const { storageRef } = this;
-    const { name, file, location } = this.state;
-    debugger
+    const { name, file, size } = this.state;
+    const { location } = this.props;
     const time = new Date();
-    if (file) {
+    if (file && size < (1048576 * 5)) {
       this.setState({isUploading: true}, () => {
         console.log(this.state);
         const imgKey = firebase.database().ref().child('images').push().key;
@@ -68,25 +65,41 @@ class Upload extends Component {
         }, this.completeUpload )
       });
     } else {
-      window.alert("please choose a file to upload");
+      this.clearForm();
+      window.alert("please choose a valid file to upload");
     }
   }
 
   render() {
-    const { isUploading } = this.state;
+    const { isUploading, source, file } = this.state;
     return (
-      <form encType="multipart/form-data" onSubmit={this.onSubmit}>
-        <div>
-          <label htmlFor="file">Choose file to upload</label>
-          <input
-            ref="fileUpload"
-            onChange={this.onFileInput}
-            type="file" name="file" accept="image/*"
-          />
-        </div>
-        <div>
-          {<button disabled={ isUploading }>Submit</button>}
-        </div>
+      <form className="Upload" encType="multipart/form-data" onSubmit={this.onSubmit}>
+        { file ?
+          <div className="Upload-preview">
+            <button
+              type="button"
+              className="Upload-button"
+              onClick={this.clearForm}
+            >Clear</button>
+            <img src={source} alt="user-upload"/>
+            <button
+              className="Upload-button"
+              disabled={ isUploading }
+            >Submit</button>
+          </div> :
+          <div>
+            <label className="Upload-label" htmlFor="file">Click to Upload</label>
+            <input
+              className="Upload-input"
+              ref="fileUpload"
+              onChange={this.onFileInput}
+              type="file" name="file" id="file" accept="image/*"
+            />
+            <div className="Upload-reqs">
+              Max size 5mb
+            </div>
+          </div>
+        }
       </form>
     )
   }

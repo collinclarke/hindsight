@@ -1,0 +1,10 @@
+.LocationDisplay {
+  position: fixed;
+  left: 2rem;
+  bottom: 2rem;
+  font-size: 1.5rem;
+  color: forestGreen;
+  text-align: left;
+  letter-spacing: -.05rem;
+  width: 60vw;
+}
