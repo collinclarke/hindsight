@@ -46,6 +46,7 @@
 
 .Upload-button {
   color: forestGreen;
+  background: none;
   border: 0;
   outline: 0;
   font-size: 2rem;
@@ -55,10 +56,23 @@
   padding: 1rem;
 }
 
+.Upload-button:disabled {
+  animation: 1s ease-in infinite bounce;
+}
+
 .Upload-clear {
   position: fixed;
 }
 
 .Upload-reqs {
   cursor: auto;
+}
+
+@keyframes bounce {
+  0% {
+    transform: blur(1rem);
+  }
+  100% {
+    transform: scaleY(2rem);
+  }
 }

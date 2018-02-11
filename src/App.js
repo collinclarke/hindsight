@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch("https://freegeoip.net/json/")
-    .then( res => res.json() )
+    .then( res => res.json(), (error) => this.setState({error}) )
     .then(
       (result) => {
         this.setState({
@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p className="App-title">Hindsight.world is an ongoing project, collecting significant images of what matters now from users around the world. Periodically this collection will be consolidated into a publication.</p>
+          <p className="App-title">Hindsight.world is an ongoing project to gather and document mass thought and aesthetics, in particular through passive collection and web scraping. This portal is dedicated to accepting images from users around the world of what is significant now.</p>
         </header>
         <Upload location={location}/>
         <LocationDisplay location={location}/>

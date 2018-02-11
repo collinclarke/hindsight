@@ -33,12 +33,13 @@ class Upload extends Component {
   }
 
   completeUpload = () => {
-    this.setState({ isUploading: false });
-    this.clearForm();
+    this.setState({ isUploading: false }, () => {
+      this.clearForm(null, () => window.alert("Thank you. Please accept this receipt."));
+    });
   }
 
-  clearForm = () => {
-    this.setState(Upload.defaultState());
+  clearForm = (e, cb) => {
+    this.setState(Upload.defaultState(), cb);
   }
 
   onSubmit = e => {
@@ -49,7 +50,6 @@ class Upload extends Component {
     const time = new Date();
     if (file && size < (1048576 * 5)) {
       this.setState({isUploading: true}, () => {
-        console.log(this.state);
         const imgKey = firebase.database().ref().child('images').push().key;
         const fileRef = storageRef.child('images/' + imgKey);
         const basicInfo = {
@@ -62,7 +62,7 @@ class Upload extends Component {
         }
         fileRef.put(file, metaData).then( snapshot => {
           this.completeUpload();
-        }, this.completeUpload )
+        }, err => console.log(err) )
       });
     } else {
       this.clearForm();
@@ -85,10 +85,11 @@ class Upload extends Component {
             <button
               className="Upload-button"
               disabled={ isUploading }
-            >Submit</button>
+            >{ isUploading ? 'Uploading' : 'Submit' }</button>
           </div> :
           <div>
-            <label className="Upload-label" htmlFor="file">Click to Upload</label>
+            <label className="Upload-label" htmlFor="file"
+              >Click to Upload</label>
             <input
               className="Upload-input"
               ref="fileUpload"
