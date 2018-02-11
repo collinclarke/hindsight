@@ -3,6 +3,7 @@
 
 # design
 /assets/working
+/src/fonts
 
 # dependencies
 /node_modules
