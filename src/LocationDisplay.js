@@ -27,7 +27,7 @@ class LocationDisplay extends Component {
             { ip }
           </div>
           <div className="LocationDisplay-location">
-            { city + ", " + region_name + ", " + country_name}
+            { city + ", " + region_name + ", " + country_name }
           </div>
           <div className="LocationDisplay-date">
             { time }

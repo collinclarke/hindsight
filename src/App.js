@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Upload from './Upload';
 import LocationDisplay from './LocationDisplay';
+import { buildWeight, buildWordWeights } from './util/variableType';
 
 class App extends Component {
 
@@ -28,6 +29,10 @@ class App extends Component {
         });
       }
     )
+
+
+    this.header = buildWeight("Hindsight.world is an ongoing project to gather and document mass thought and aesthetics, in particular through passive collection and web scraping. This portal is dedicated to accepting images from users around the world of what is significant now.")
+
   }
 
   render() {
@@ -35,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p className="App-title">Hindsight.world is an ongoing project to gather and document mass thought and aesthetics, in particular through passive collection and web scraping. This portal is dedicated to accepting images from users around the world of what is significant now.</p>
+          <p className="App-title">{ this.header }</p>
         </header>
         <Upload location={location}/>
         <LocationDisplay location={location}/>
