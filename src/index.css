@@ -1,5 +1,77 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: arial, helvetica, sans-serif;
+  font-family: System, arial, helvetica, sans-serif;
+}
+
+button {
+  color: forestGreen;
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-LightCn.otf") format('opentype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-Light.otf") format('opentype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-Cn.otf") format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd.otf") format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-Ex.otf") format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-Bold.otf") format('opentype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-BoldEx.otf") format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-Black.otf") format('opentype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: System;
+  src: local("System Font"),
+       url("./fonts/UniversLTStd-BlackEx.otf") format('opentype');
+  font-weight: 900;
 }

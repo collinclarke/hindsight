@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Upload from './Upload';
 import LocationDisplay from './LocationDisplay';
-import { buildWeight, buildWordWeights } from './util/variableType';
+import Subscribe from './Subscribe';
+import { buildWeight } from './util/variableType';
 
 class App extends Component {
 
@@ -44,6 +45,7 @@ class App extends Component {
         </header>
         <Upload location={location}/>
         <LocationDisplay location={location}/>
+        <Subscribe/>
       </div>
     );
   }

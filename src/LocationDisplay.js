@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './LocationDisplay.css';
+import { buildWeight } from './util/variableType';
 
 class LocationDisplay extends Component {
 
@@ -24,13 +25,13 @@ class LocationDisplay extends Component {
       return (
         <div className="LocationDisplay">
           <div className="LocationDisplay-ip">
-            { ip }
+            { buildWeight(ip, 2) }
           </div>
           <div className="LocationDisplay-location">
-            { city + ", " + region_name + ", " + country_name }
+            { buildWeight(city + ", " + region_name + ", " + country_name, 2) }
           </div>
           <div className="LocationDisplay-date">
-            { time }
+            { buildWeight(time, 2) }
           </div>
         </div>
       )

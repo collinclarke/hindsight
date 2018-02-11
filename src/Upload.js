@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import './Upload.css';
+import { buildWeight } from './util/variableType';
 
 class Upload extends Component {
 
@@ -27,6 +28,10 @@ class Upload extends Component {
     const file = files[0];
     if (file) {
       const { name, size, type } = file;
+      if ( size > (1048576 * 5) ){
+        window.alert("File is too large");
+        return;
+      }
       const source = window.URL.createObjectURL(file);
       this.setState({ name, size, type, file, source });
     }
@@ -48,7 +53,7 @@ class Upload extends Component {
     const { name, file, size } = this.state;
     const { location } = this.props;
     const time = new Date();
-    if (file && size < (1048576 * 5)) {
+    if (file) {
       this.setState({isUploading: true}, () => {
         const imgKey = firebase.database().ref().child('images').push().key;
         const fileRef = storageRef.child('images/' + imgKey);
@@ -80,16 +85,16 @@ class Upload extends Component {
               type="button"
               className="Upload-button"
               onClick={this.clearForm}
-            >Clear</button>
+            >{buildWeight("Clear", 5)}</button>
             <img src={source} alt="user-upload"/>
             <button
               className="Upload-button"
               disabled={ isUploading }
-            >{ isUploading ? 'Uploading' : 'Submit' }</button>
+            >{ buildWeight(( isUploading ? 'Uploading' : 'Submit' ), 2)}</button>
           </div> :
           <div>
             <label className="Upload-label" htmlFor="file"
-              >Click to Upload</label>
+              >{ buildWeight("Click to Upload", 2)}</label>
             <input
               className="Upload-input"
               ref="fileUpload"
@@ -97,7 +102,7 @@ class Upload extends Component {
               type="file" name="file" id="file" accept="image/*"
             />
             <div className="Upload-reqs">
-              Max size 5mb
+              { buildWeight("Max size 5mb", 4) }
             </div>
           </div>
         }

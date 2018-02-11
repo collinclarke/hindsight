@@ -6,7 +6,6 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  background: white;
 }
 
 .Upload-preview > img {
@@ -50,18 +49,12 @@
   border: 0;
   outline: 0;
   font-size: 2rem;
-  letter-spacing: .2rem;
-  text-transform: uppercase;
   cursor: pointer;
   padding: 1rem;
 }
 
 .Upload-button:disabled {
-  animation: 1s ease-in infinite bounce;
-}
-
-.Upload-clear {
-  position: fixed;
+  animation: 200ms ease infinite bounce;
 }
 
 .Upload-reqs {
@@ -70,9 +63,9 @@
 
 @keyframes bounce {
   0% {
-    transform: blur(1rem);
+    transform: blur(0);
   }
   100% {
-    transform: scaleY(2rem);
+    transform: blur(4rem);
   }
 }

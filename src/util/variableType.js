@@ -19,12 +19,13 @@ export const wonkType = (phrase, maxWeight) => {
   return newHtml;
 }
 
-export const buildWeight = (string) => {
+export const buildWeight = (string, speed = 3) => {
+  speed = speed > 7 ? 7 : speed;
+  if ( string.length < speed ) return ( [<span key="emailString">{string}</span>] );
 
   const newHtml = [];
   const length = string.length;
-  console.log(length)
-  const divisions = Math.floor(length / 7);
+  const divisions = Math.floor(length / speed);
   const breakpoints = [];
 
   for (let i = 0; i < length; i += divisions) {
@@ -33,14 +34,14 @@ export const buildWeight = (string) => {
 
   if (!breakpoints.includes((length - 1))) breakpoints.push(length - 1);
 
-  const weights = [400, 500, 600, 700, 800, 900];
+  const weights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
   let minIdx = 0;
   let maxIdx = 1;
 
   breakpoints.forEach((breakpoint, idx) => {
     const fontWeight = weights[idx];
     const portion = string.substring(breakpoints[minIdx], breakpoints[maxIdx]);
-    console.log(portion, [minIdx, maxIdx])
+    // console.log(fontWeight, portion, idx);
     newHtml.push(
       <span key={idx} style={{fontWeight}}>{portion}</span>
     )
@@ -50,12 +51,4 @@ export const buildWeight = (string) => {
 
   return newHtml;
 
-}
-
-export const buildWordWeights = (string) => {
-  const newHtml = []
-  string.split(" ").forEach(word => {
-    newHtml.push(buildWeight(word));
-  })
-  return newHtml;
 }
