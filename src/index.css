@@ -13,6 +13,31 @@ button {
   padding: 0;
 }
 
+@media (max-width: 600px) {
+
+  main, section, form, header {
+    position: relative !important;
+    display: inline-block !important;
+    height: 100% !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box !important;
+    bottom: auto !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+    width: 80% !important;
+  }
+
+  div {
+    width: 100% !important;
+  }
+
+  .Upload {
+    margin: 0 auto 20px auto !important;
+  }
+
+}
+
 @font-face {
   font-family: System;
   src: local("System Font"),

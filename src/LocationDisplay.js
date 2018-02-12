@@ -23,7 +23,7 @@ class LocationDisplay extends Component {
     if (this.props.location) {
       const { ip, city, region_name, country_name } = this.props.location;
       return (
-        <div className="LocationDisplay">
+        <section className="LocationDisplay">
           <div className="LocationDisplay-ip">
             { buildWeight(ip, 2) }
           </div>
@@ -33,15 +33,15 @@ class LocationDisplay extends Component {
           <div className="LocationDisplay-date">
             { buildWeight(time, 2) }
           </div>
-        </div>
+        </section>
       )
     } else {
       return (
-        <div className="LocationDisplay">
+        <section className="LocationDisplay">
           <div className="LocationDisplay-loading">
             Finding You
           </div>
-        </div>
+        </section>
       )
     }
   }

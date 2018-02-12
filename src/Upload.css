@@ -39,8 +39,15 @@
 }
 
 .Upload-label {
-  padding: 25vh 22vw;
   cursor: pointer;
+  padding: 10rem;
+}
+
+.Upload-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .Upload-button {

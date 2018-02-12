@@ -39,14 +39,14 @@ class App extends Component {
   render() {
     const { location } = this.state;
     return (
-      <div className="App">
+      <main className="App">
         <header className="App-header">
           <p className="App-title">{ this.header }</p>
         </header>
         <Upload location={location}/>
         <LocationDisplay location={location}/>
         <Subscribe/>
-      </div>
+      </main>
     );
   }
 

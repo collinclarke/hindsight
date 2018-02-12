@@ -92,7 +92,7 @@ class Upload extends Component {
               disabled={ isUploading }
             >{ buildWeight(( isUploading ? 'Uploading' : 'Submit' ), 2)}</button>
           </div> :
-          <div>
+          <div className="Upload-cta">
             <label className="Upload-label" htmlFor="file"
               >{ buildWeight("Click to Upload", 2)}</label>
             <input
