@@ -19,10 +19,4 @@
   color: forestGreen;
   text-align: left;
   letter-spacing: -.05rem;
-  width: 60vw;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

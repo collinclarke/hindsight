@@ -1,3 +1,6 @@
+html {
+  font-size: 150%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -15,17 +18,24 @@ button {
 
 @media (max-width: 600px) {
 
-  main, section, form, header {
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: auto !important;
+    padding: 0 5vw;
+  }
+
+  section, form, header {
     position: relative !important;
-    display: inline-block !important;
     height: 100% !important;
-    margin-bottom: 20px !important;
+    margin: 0 auto 20px auto !important;
     box-sizing: border-box !important;
     bottom: auto !important;
     right: auto !important;
     left: auto !important;
     top: auto !important;
-    width: 80% !important;
+    width: 100% !important;
   }
 
   div {
@@ -34,6 +44,16 @@ button {
 
   .Upload {
     margin: 0 auto 20px auto !important;
+  }
+
+  .Subscribe-display {
+    display: none !important;
+  }
+
+  .Upload-reqs {
+    position: absolute !important;
+    top: 65%;
+    left: 0%;
   }
 
 }
