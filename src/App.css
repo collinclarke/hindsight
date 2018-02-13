@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  margin: 10vw 30vw;
+}
+
+.App-logo {
+
+}
+
+.App-header-logo {
+  width: 5rem;
+  padding-right: 1rem;
+}

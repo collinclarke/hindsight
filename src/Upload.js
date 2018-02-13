@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { buildWeight } from './util/variableType';
+import './Upload.css';
 
 class Upload extends Component {
 
@@ -93,7 +94,7 @@ class Upload extends Component {
           </div> :
           <div className="Upload-cta">
             <label className="Upload-label" htmlFor="file"
-              >{ buildWeight("Click to Upload", 2)}</label>
+              ><button>{ buildWeight("Click to Upload", 2)}</button></label>
             <input
               className="Upload-input"
               ref="fileUpload"

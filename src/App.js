@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Upload from './Upload';
 import LocationDisplay from './LocationDisplay';
 import Subscribe from './Subscribe';
-import { buildWeight } from './util/variableType';
+import Submit from './Submit';
+import { buildWeight, wonkType } from './util/variableType';
+import logo from './hs_logo.svg';
+import './App.css';
 
 class App extends Component {
 
@@ -40,11 +43,14 @@ class App extends Component {
     return (
       <main className="App">
         <header className="App-header">
-          <p className="App-title">{ this.header }</p>
+          <img src={logo}/>
+          <p className="App-title">
+          { this.header }</p>
+          <Subscribe/>
         </header>
         <Upload location={location}/>
         <LocationDisplay location={location}/>
-        <Subscribe/>
+        <Submit/>
       </main>
     );
   }

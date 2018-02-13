@@ -4,7 +4,7 @@ export const wonkType = (phrase, maxWeight) => {
   const newHtml = [];
 
   const weight = () => {
-    const random = Math.floor(Math.random() * Math.floor(7));
+    const random = Math.floor(Math.random() * Math.floor(9));
     return random * 100;
   };
 

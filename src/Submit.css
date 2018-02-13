@@ -1,0 +1,31 @@
+.Submit-textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #7df910;
+}
+.Submit-textarea::-moz-placeholder { /* Firefox 19+ */
+  color: #7df910;
+}
+.Submit-textarea:-ms-input-placeholder { /* IE 10+ */
+  color: #7df910;
+}
+.Submit-textarea:-moz-placeholder { /* Firefox 18- */
+  color: #7df910;
+}
+.Submit-textarea:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #b4ff9e;
+}
+.Submit-textarea:focus::-moz-placeholder { /* Firefox 19+ */
+  color: #b4ff9e;
+}
+.Submit-textarea:focus:-ms-input-placeholder { /* IE 10+ */
+  color: #b4ff9e;
+}
+.Submit-textarea:focus:-moz-placeholder { /* Firefox 18- */
+  color: #b4ff9e;
+}
+.Submit-textarea {
+  color: #dff5d9;
+  width: 20rem;
+}
+.Submit-button {
+  margin-left: 2rem;
+}

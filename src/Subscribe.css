@@ -1,0 +1,21 @@
+.Subscribe-textarea {
+  border-bottom: 3px solid white;
+  transition: all 200ms;
+}
+
+.Subscribe-textarea:focus {
+  border-bottom: 3px solid forestGreen;
+}
+
+.Subscribe-textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgb(94, 245, 23);
+}
+.Subscribe-textarea::-moz-placeholder { /* Firefox 19+ */
+  color: rgb(94, 245, 23);
+}
+.Subscribe-textarea:-ms-input-placeholder { /* IE 10+ */
+  color: rgb(94, 245, 23);
+}
+.Subscribe-textarea:-moz-placeholder { /* Firefox 18- */
+  color: rgb(94, 245, 23);
+}
