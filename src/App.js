@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Upload from './Upload';
 import LocationDisplay from './LocationDisplay';
 import Subscribe from './Subscribe';

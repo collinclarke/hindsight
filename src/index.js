@@ -13,7 +13,7 @@ var config = {
     storageBucket: "hindsight-world.appspot.com",
     messagingSenderId: "799902273453"
   };
-  
+
 firebase.initializeApp(config);
 
 ReactDOM.render(<App />, document.getElementById('root'));

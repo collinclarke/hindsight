@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { buildWeight } from './util/variableType';
 import debounce from 'lodash.debounce';
-import './Subscribe.css';
 
 class Subscribe extends Component {
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import './Upload.css';
 import { buildWeight } from './util/variableType';
 
 class Upload extends Component {

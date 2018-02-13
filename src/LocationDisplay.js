@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './LocationDisplay.css';
 import { buildWeight } from './util/variableType';
 
 class LocationDisplay extends Component {
