@@ -11,21 +11,25 @@
   color: #7df910;
 }
 .Submit-textarea:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #b4ff9e;
+  color: #ffca9e;
 }
 .Submit-textarea:focus::-moz-placeholder { /* Firefox 19+ */
-  color: #b4ff9e;
+  color: #ffca9e;
 }
 .Submit-textarea:focus:-ms-input-placeholder { /* IE 10+ */
-  color: #b4ff9e;
+  color: #ffca9e;
 }
 .Submit-textarea:focus:-moz-placeholder { /* Firefox 18- */
-  color: #b4ff9e;
+  color: #ffca9e;
+}
+form.Submit {
+  display: flex;
+  flex-flow: row nowrap;
 }
 .Submit-textarea {
   color: #dff5d9;
   width: 20rem;
 }
 .Submit-button {
-  margin-left: 2rem;
+
 }

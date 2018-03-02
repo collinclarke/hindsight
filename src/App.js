@@ -42,6 +42,7 @@ class App extends Component {
     const { location } = this.state;
     return (
       <main className="App">
+        <Submit/>
         <header className="App-header">
           <img src={logo}/>
           <p className="App-title">
@@ -50,7 +51,6 @@ class App extends Component {
         </header>
         <Upload location={location}/>
         <LocationDisplay location={location}/>
-        <Submit/>
       </main>
     );
   }
